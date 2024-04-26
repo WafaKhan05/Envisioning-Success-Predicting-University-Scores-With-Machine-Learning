@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>University Score Prediction</title>
+</head>
+<style>
+body {
+  background-image: url("{{ url_for('static', filename='images/background.jpg') }}");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+
+}
+ 
+ .container {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #ddd;
+    padding: 30px;
+    height: 120vh;
+    background-color: white;
+    max-width: 500px;  
+    margin: 0 auto;
+    display: block  
+    
+  }
+h2 {
+
+text-align: center;
+
+}
+.form-label {
+      display: block; /* Make labels appear on separate lines */
+      margin-bottom: 5px;
+    }
+.my-text-box {
+  background-color: #f1f1f1; /* Light gray background */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px; /* Padding around the text */
+  font-size: 16px; /* Font size for the text */
+}
+ .my-button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 8px;
+    float: right;
+  }
+.my-button:hover {
+    background-color: #45a049; /* Darker Green */
+  }
+
+
+</style>
+<body>
+
+<div class="container">
+  <h2>University Score Prediction</h2>
+<form action= "/predict" method="post">
+  <br><br><label for="fname"><b>Quality Of Education:</b></label><br>
+  <br><input type="text" id="fname" name="fname" class="my-text-box" size='40'><br>
+  <br><label for="alumniemployment"><b>Alumni Employment:</b></label><br>
+  <br><input type="text" id="alumniemployment" name="alumniemployment" class="my-text-box" size='40'><br>
+  <br><label for="qualityoffaculty"><b>Quality Of Faculty:</b></label><br>
+  <br><input type="text" id="qualityoffaculty" name="qualityoffaculty" class="my-text-box" size='40'><br>
+  <br><label for="publications"><b>Publications:</b></label><br>
+  <br><input type="text" id="publications" name="publications" class="my-text-box" size='40'><br>
+  <br><label for="influence"><b>Influence</b></label><br>
+  <br><input type="text" id="influence" name="influence" class="my-text-box" size='40'><br>
+  <br><label for="citations"><b>Citations:</b></label><br>
+  <br><input type="text" id="citations" name="citations" class="my-text-box" size='40'><br>
+  <br><label for="patents"><b>Patents:</b></label><br>
+  <br><input type="text" id="patents" name="patents" class="my-text-box" size='40'><br> 
+  <br><br>
+  <button class="my-button">Predict</button>
+</form> 
+   
+{{ prediction_text }}
+</div>
+</body>
+</html>
